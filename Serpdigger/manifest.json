@@ -1,0 +1,33 @@
+{
+    "background": {
+        "persistent": true,
+        "scripts": ["includes/jquery.js", "includes/logs.js", "background/index.js", "background/api.js", "background/account.js", "background/communication.js", "background/runner.js"]
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "logo/logo-16.png",
+            "38": "logo/logo-48.png"
+        },
+        "default_popup": "popup/popup.html",
+        "default_title": "Serpdigger"
+    },
+    "content_scripts": [{
+        "js": ["content/patch-worker.js", "includes/jquery.js", "includes/logs.js", "content/duckduckgo.js"],
+        "matches": ["https://duckduckgo.com/*q=*", "https://cse.google.co.il/*", "https://*/*"],
+        "run_at": "document_end"
+    }],
+    "description": "The World's First Elastic Email Scraper",
+    "icons": {
+        "128": "logo/logo-128.png",
+        "16": "logo/logo-16.png",
+        "48": "logo/logo-48.png"
+    },
+    "incognito": "split",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu2QgUTfHP66Wfm5eUCTVBj5eFt/x/g7COjEylGdg5QZasmxZ9j85ibka14VtXt/+rKImlhncD9cdgB7MYqiiEEntFVjuuCi92qAaaML7DBCE4FGm5j7qU2M+ekhazLCv4o28i0nbs5ZIjE2BBh0ik4RNNt6z1T4uD5AoqT/56zkVGnHcZiegUrxkr2fhKUz2V9sC8CdTL3tRonCzrTk630uNEbVETk9iinH0NnppcSEPi8ujYUgnbjMyfI7/FLHu6oZbUjsM5vyNFr1fc2eKlP3Hmvmt4VI7WUJrpPooy+pZexpH44ryUg7CBlIaRcbZZXsLSGSjAtMvEdStMHYpeQIDAQAB",
+    "manifest_version": 2,
+    "name": "Serpdigger - Codingplace.ma",
+    "permissions": ["http://*/*", "https://*/*", "storage", "downloads", "tabs", "webNavigation"],
+    "update_url": "https://clients2.google.com/service/update2/crx",
+    "version": "3.0.11",
+    "web_accessible_resources": ["content/worker.js"]
+}

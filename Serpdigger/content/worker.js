@@ -1,0 +1,1 @@
+setInterval(function () {self.postMessage('tick');}, 1000);
